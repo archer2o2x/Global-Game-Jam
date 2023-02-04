@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-public struct PlantBaseRadius : ISharedComponentData
+public struct PlantBaseRadius : IComponentData
 {
     public float Value;
 }

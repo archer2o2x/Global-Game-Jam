@@ -22,9 +22,9 @@ public class PlantAuthoring : MonoBehaviour
             AddComponent(new PlantResourceWeight { Value = authoring.PlantResourceWeight });
             AddComponent(new Team { Value = authoring.Team });
 
-            AddSharedComponent(new PlantBaseRadius { Value = authoring.PlantBaseRadius });
-            AddSharedComponent(new GrowPerConsumption { Value = authoring.GrowPerConsuption });
-            AddSharedComponent(new ResourceStealPerRadius { Value = authoring.ResourceStealPerRadius });
+            AddComponent(new PlantBaseRadius { Value = authoring.PlantBaseRadius });
+            AddComponent(new GrowPerConsumption { Value = authoring.GrowPerConsuption });
+            AddComponent(new ResourceStealPerRadius { Value = authoring.ResourceStealPerRadius });
 
             AddBuffer<NearbyPlant>();
         }
