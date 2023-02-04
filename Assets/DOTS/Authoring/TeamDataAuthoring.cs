@@ -10,9 +10,9 @@ public class TeamDataAuthoring : MonoBehaviour
         public override void Bake(TeamDataAuthoring authoring)
         {
             AddComponent<TeamTag>();
-            AddComponent<TeamResourceSources>();
             AddComponent<TeamWeight>();
             AddComponent<TeamResources>();
+            AddComponent(new TeamPlantsCount { Value = -1 });
             AddComponent(new Team { Value = authoring.Team });
         }
     }

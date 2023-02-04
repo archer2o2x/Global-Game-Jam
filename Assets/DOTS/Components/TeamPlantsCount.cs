@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-public struct Team : IComponentData
+public struct TeamPlantsCount : IComponentData
 {
     public int Value;
 }
