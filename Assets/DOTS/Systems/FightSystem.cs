@@ -34,7 +34,7 @@ partial struct FightSystem : ISystem
             for (int i = 0; i < nearbyPlants.Length; i++)
             {
                 RefRO<LocalTransform> enemyPlant = lookup.GetRefRO(nearbyPlants[i].Value);
-                radiusMultiplier.Value -= enemyPlant.ValueRO.Scale * stealPerRadius.Value;
+                radiusMultiplier.AddValue(-enemyPlant.ValueRO.Scale * stealPerRadius.Value);
             }
         }
     }

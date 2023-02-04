@@ -240,6 +240,7 @@ MonoBehaviour:
   PlantBaseRadius: 0.5
   GrowPerConsuption: 0.001
   ResourceStealPerRadius: 0.025
+  MaxRadius: 6
   Team: 0
 --- !u!114 &3429775504115347574
 MonoBehaviour:
