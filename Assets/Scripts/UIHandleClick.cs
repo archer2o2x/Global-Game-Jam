@@ -25,7 +25,7 @@ public class UIHandleClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Plants = World.DefaultGameObjectInjectionWorld.EntityManager.CreateEntityQuery(typeof(WorldTransform), typeof(PlantTag));
+        Plants = World.DefaultGameObjectInjectionWorld.EntityManager.CreateEntityQuery(typeof(WorldTransform), typeof(Team), typeof(PlantTag));
 
         PlantWeightingSlider.onValueChanged.AddListener(HandleSliderChange);
 
@@ -46,17 +46,24 @@ public class UIHandleClick : MonoBehaviour
 
     public void PreprocessClick()
     {
-        Vector3 ClickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
+        Ray ClickPosRay = Camera.main.ScreenPointToRay(Input.mousePosition + Vector3.forward * 10);
 
-        float3 ClickPosDOTS = new float3(ClickPos.x, ClickPos.y, ClickPos.z);
+        RaycastHit info;
+
+        if (!Physics.Raycast(ClickPosRay, out info)) return;
+
+        float3 ClickPosDOTS = new float3(info.point.x, info.point.y, info.point.z);
 
         var PlantsData = Plants.ToComponentDataArray<WorldTransform>(Unity.Collections.Allocator.Temp);
+        var TeamData = Plants.ToComponentDataArray<Team>(Allocator.Temp);
 
         int IndexOfClosest = 0;
         bool DidFindPlant = false;
 
         for (int i = 0; i < PlantsData.Length; i++)
         {
+            if (TeamData[i].Value != 0) continue;
+
             if (math.distance(PlantsData[i].Position, ClickPosDOTS) > SelectRadius) continue;
 
             DidFindPlant = true;
@@ -95,6 +102,7 @@ public class UIHandleClick : MonoBehaviour
 
         result.x = Mathf.Clamp(result.x, 20 + PlantWeightingUI.rect.width / 2, Screen.width - (20 + PlantWeightingUI.rect.width / 2));
         result.y = Mathf.Clamp(result.y, 20 + PlantWeightingUI.rect.height / 2, Screen.height - (20 + PlantWeightingUI.rect.height / 2));
+        result.z = 0;
 
         return result;
     }
