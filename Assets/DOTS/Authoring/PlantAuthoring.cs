@@ -9,6 +9,7 @@ public class PlantAuthoring : MonoBehaviour
     public float PlantBaseRadius;
     public float GrowPerConsuption;
     public float ResourceStealPerRadius;
+    public float MaxRadius;
 
     public int Team;
 
@@ -18,7 +19,7 @@ public class PlantAuthoring : MonoBehaviour
         {
             AddComponent<PlantTag>();
 
-            AddComponent(new PlantRadiusMultiplier { Value = authoring.PlantRadiusMultiplier });
+            AddComponent(new PlantRadiusMultiplier { Value = authoring.PlantRadiusMultiplier, MaxValue = authoring.MaxRadius });
             AddComponent(new PlantResourceWeight { Value = authoring.PlantResourceWeight });
             AddComponent(new Team { Value = authoring.Team });
 
