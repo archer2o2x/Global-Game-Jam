@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlantAuthoring : MonoBehaviour
 {
     public float PlantRadiusMultiplier;
-    public float PlantResourceWeight;
+    public int PlantResourceWeight;
 
     public float PlantBaseRadius;
     public float GrowPerConsuption;

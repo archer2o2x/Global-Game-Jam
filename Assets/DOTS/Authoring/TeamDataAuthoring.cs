@@ -11,7 +11,7 @@ public class TeamDataAuthoring : MonoBehaviour
         {
             AddComponent<TeamTag>();
             AddComponent<TeamResourceSources>();
-            AddComponent<TotalTickWeight>();
+            AddComponent<TeamWeight>();
             AddComponent<TeamResources>();
             AddComponent(new Team { Value = authoring.Team });
         }
