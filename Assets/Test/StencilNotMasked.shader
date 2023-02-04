@@ -3,6 +3,8 @@ Shader "Unlit/StencilNotMasked"
     Properties
     {
         _Color ("Color", Color) = (0,0,0,0)
+        _MaskValue("MaskValue", int) = 0
+
     }
     SubShader
     {
@@ -11,8 +13,8 @@ Shader "Unlit/StencilNotMasked"
 
         Stencil
         {
-            Ref 2
-            Comp Greater
+            Ref [_MaskValue]
+            Comp Greater   
             Pass keep
         }
 
