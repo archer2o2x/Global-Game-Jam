@@ -908,6 +908,7 @@ GameObject:
   - component: {fileID: 1822244670}
   - component: {fileID: 1822244669}
   - component: {fileID: 1822244672}
+  - component: {fileID: 1822244673}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1032,6 +1033,21 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1822244673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822244668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aab1dd1f76b0147909e66e3f77d32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1822244671}
+  CameraMoveSpeed: 4
+  CameraScrollSpeed: 800
 --- !u!1 &1931368969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1166,7 @@ MonoBehaviour:
   PlantWeightingUI: {fileID: 150320577}
   PlantWeightingSlider: {fileID: 1147520709}
   SelectRadius: 2
+  PlantPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2013753025
 GameObject:
   m_ObjectHideFlags: 0
