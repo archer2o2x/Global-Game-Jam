@@ -10,13 +10,13 @@ public partial struct TeamResourcesSystem : ISystem
     public void OnUpdate(ref SystemState state)
     {
         var resourceRate = SystemAPI.GetSingleton<ResourceRatePerSource>().Value;
-        new Job { resourceRatePersource = resourceRate, repeat = true }.ScheduleParallel();
+        new Job { resourceRatePerSource = resourceRate, repeat = true }.ScheduleParallel();
     }
 
     [BurstCompile]
     public partial struct Job : IJobEntity
     {
-        public float resourceRatePersource;
+        public float resourceRatePerSource;
         public bool repeat;
 
         public void Execute(
@@ -24,7 +24,7 @@ public partial struct TeamResourcesSystem : ISystem
             in TeamResourceSources resourceSources)
         {
             //TODO: Merge with TeamResourceSourceSystem
-            resources.Value = resourceSources.Value * resourceRatePersource;
+            resources.Value = resourceSources.Value * resourceRatePerSource;
         }
     }
 

@@ -16,6 +16,7 @@ public partial struct TeamWeightSystem : ISystem
         _teamsQuery = SystemAPI.QueryBuilder().WithAll<TeamTag>().Build();
     }
 
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         var teamsAmount = _teamsQuery.CalculateEntityCount();
