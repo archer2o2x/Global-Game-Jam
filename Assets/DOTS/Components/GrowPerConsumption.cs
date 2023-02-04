@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-public struct GrowPerConsumption : IComponentData
+public struct GrowPerConsumption : ISharedComponentData
 {
     public float Value;
 }

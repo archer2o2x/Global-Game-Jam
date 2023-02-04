@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-public struct ResourceStealPerRadius : IComponentData
+public struct ResourceStealPerRadius : ISharedComponentData
 {
     public float Value;
 }
