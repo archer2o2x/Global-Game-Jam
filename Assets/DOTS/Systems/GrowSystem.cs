@@ -19,7 +19,7 @@ public partial struct GrowSystem : ISystem
         weightsByTeam = new NativeHashMap<int, int>(100, Allocator.Persistent);
     }
 
-    [BurstCompile]
+    //[BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         var teams = _teamsQuery.ToComponentDataArray<Team>(Allocator.Temp);
@@ -53,7 +53,7 @@ public partial struct GrowSystem : ISystem
             var teamResources = resourcesByTeam[team.Value];
             var teamWeight = weightsByTeam[team.Value];
             var plantResources = teamResources * ((float)weight.Value / teamWeight);
-            //radiusMultiplier.Value += plantResources * growPerConsumption.Value;
+            radiusMultiplier.Value += plantResources * growPerConsumption.Value;
         }
     }
 

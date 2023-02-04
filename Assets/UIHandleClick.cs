@@ -5,6 +5,8 @@ using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
 using Unity.Collections;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class UIHandleClick : MonoBehaviour
 {
@@ -12,12 +14,18 @@ public class UIHandleClick : MonoBehaviour
 
     public RectTransform PlantWeightingUI;
 
+    public Slider PlantWeightingSlider;
+
     public float SelectRadius;
+
+    private Entity PlantEntity;
 
     // Start is called before the first frame update
     void Start()
     {
         Plants = World.DefaultGameObjectInjectionWorld.EntityManager.CreateEntityQuery(typeof(WorldTransform), typeof(PlantTag));
+
+        PlantWeightingSlider.onValueChanged.AddListener(HandleSliderChange);
     }
 
     // Update is called once per frame
@@ -31,23 +39,36 @@ public class UIHandleClick : MonoBehaviour
 
         float3 ClickPosDOTS = new float3(ClickPos.x, ClickPos.y, ClickPos.z);
 
-        Debug.Log(ClickPosDOTS);
-
         var PlantsData = Plants.ToComponentDataArray<WorldTransform>(Unity.Collections.Allocator.Temp);
+
+        int IndexOfClosest = 0;
 
         for (int i = 0; i < PlantsData.Length; i ++)
         {
             if (math.distance(PlantsData[i].Position, ClickPosDOTS) > SelectRadius) continue;
 
-            HandleClick(new Vector3(PlantsData[i].Position.x, PlantsData[i].Position.y, PlantsData[i].Position.z), Plants.ToEntityArray(Allocator.Temp)[i]);
+            if (math.distance(PlantsData[i].Position, ClickPosDOTS) < math.distance(PlantsData[IndexOfClosest].Position, ClickPosDOTS)) IndexOfClosest = i;
         }
+
+        HandleClick(new Vector3(PlantsData[IndexOfClosest].Position.x, PlantsData[IndexOfClosest].Position.y, PlantsData[IndexOfClosest].Position.z), Plants.ToEntityArray(Allocator.Temp)[IndexOfClosest]);
     }
 
     public void HandleClick(Vector3 position, Entity entity)
     {
         Vector3 ScreenSpacePos = CalculateScreenSpacePos(position);
 
+        PlantEntity = entity;
+
         PlantWeightingUI.position = ScreenSpacePos;
+
+        PlantWeightingSlider.value = World.DefaultGameObjectInjectionWorld.EntityManager.GetComponentData<PlantResourceWeight>(PlantEntity).Value;
+    }
+
+    public void HandleSliderChange(float amount)
+    {
+        int NewPlantWeight = (int)PlantWeightingSlider.value;
+
+        World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData<PlantResourceWeight>(PlantEntity, new PlantResourceWeight { Value = NewPlantWeight });
     }
 
     public Vector3 CalculateScreenSpacePos(Vector3 position)
