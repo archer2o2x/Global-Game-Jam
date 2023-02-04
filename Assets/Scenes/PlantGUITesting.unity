@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlantWeightingUI: {fileID: 150320577}
-  SelectRadius: 200
+  SelectRadius: 2
 --- !u!1 &1989888657
 GameObject:
   m_ObjectHideFlags: 0
