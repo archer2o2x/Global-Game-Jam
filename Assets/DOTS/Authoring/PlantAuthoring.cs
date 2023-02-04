@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
 
@@ -14,12 +12,12 @@ public class PlantAuthoring : MonoBehaviour
 
     public int Team;
 
-    public GameObject Enemy;
-
     public class PlantBaker : Baker<PlantAuthoring>
     {
         public override void Bake(PlantAuthoring authoring)
         {
+            AddComponent<PlantTag>();
+
             AddComponent(new PlantRadiusMultiplier { Value = authoring.PlantRadiusMultiplier });
             AddComponent(new PlantResourceWeight { Value = authoring.PlantResourceWeight });
             AddComponent(new Team { Value = authoring.Team });
@@ -29,7 +27,6 @@ public class PlantAuthoring : MonoBehaviour
             AddComponent(new ResourceStealPerRadius { Value = authoring.ResourceStealPerRadius });
 
             AddBuffer<NearbyPlant>();
-            //AddBuffer<NearbyPlant>().Add(new NearbyPlant { Value = GetEntity(authoring.Enemy) });
         }
     }
 }

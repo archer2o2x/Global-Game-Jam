@@ -2,21 +2,20 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
+using Unity.Burst;
 
+[BurstCompile]
 partial struct NearPlantSystem : ISystem
 {
     private EntityQuery TeamQuery;
 
+    [BurstCompile]
     public void OnCreate(ref SystemState state)
     {
         TeamQuery = SystemAPI.QueryBuilder().WithAll<Team, PlantBaseRadius, PlantRadiusMultiplier, WorldTransform>().Build();
     }
 
-    public void OnDestroy(ref SystemState state)
-    {
-        
-    }
-
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         new NearPlantJob {
@@ -29,6 +28,7 @@ partial struct NearPlantSystem : ISystem
         }.ScheduleParallel();
     }
 
+    [BurstCompile]
     partial struct NearPlantJob : IJobEntity
     {
         [DeallocateOnJobCompletion, ReadOnly]
@@ -58,4 +58,6 @@ partial struct NearPlantSystem : ISystem
             }
         }
     }
+
+    [BurstCompile] public void OnDestroy(ref SystemState state) { }
 }

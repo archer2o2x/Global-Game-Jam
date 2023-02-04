@@ -1,7 +1,7 @@
 using Unity.Burst;
 using Unity.Entities;
 
-[BurstCompile]
+[BurstCompile, UpdateAfter(typeof(TeamResourceSourcesSystem))]
 public partial struct TeamResourcesSystem : ISystem
 {
     [BurstCompile] public void OnCreate(ref SystemState state) { }
@@ -23,7 +23,6 @@ public partial struct TeamResourcesSystem : ISystem
             ref TeamResources resources,
             in TeamResourceSources resourceSources)
         {
-            //TODO: Merge with TeamResourceSourceSystem
             resources.Value = resourceSources.Value * resourceRatePerSource;
         }
     }

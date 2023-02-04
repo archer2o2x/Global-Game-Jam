@@ -5,17 +5,7 @@ using Unity.Transforms;
 [BurstCompile]
 public partial struct PlantRadiusSystem : ISystem
 {
-    [BurstCompile]
-    public void OnCreate(ref SystemState state)
-    {
-        
-    }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state)
-    {
-        
-    }
+    [BurstCompile] public void OnCreate(ref SystemState state) { }
 
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
@@ -23,6 +13,7 @@ public partial struct PlantRadiusSystem : ISystem
         new PlantRadiusJob().ScheduleParallel();
     }
 
+    [BurstCompile]
     public partial struct PlantRadiusJob : IJobEntity
     {
         public void Execute(
@@ -33,4 +24,6 @@ public partial struct PlantRadiusSystem : ISystem
             transform.Scale = 2 * radius.Value * radiusMultiplier.Value;
         }
     }
+
+    [BurstCompile] public void OnDestroy(ref SystemState state) { }
 }

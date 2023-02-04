@@ -19,24 +19,19 @@ public partial struct TeamResourceSourcesSystem : ISystem
         _resourcesQuery = SystemAPI.QueryBuilder().WithAll<ResourceTag, WorldTransform>().Build();
     }
 
-    //[BurstCompile]
+    [BurstCompile]
     public void OnUpdate(ref SystemState state)
     { 
         var teamsAmount = _teamsQuery.CalculateEntityCount();
         var resourcesPerTeam = new NativeArray<int>(teamsAmount, Allocator.TempJob);
         var resourceTransforms = _resourcesQuery.ToComponentDataArray<WorldTransform>(Allocator.TempJob);
 
-        UnityEngine.Debug.Log(resourceTransforms.Length);
-
-        new ResourceCountJob {
-            resourceTransforms = resourceTransforms,
-            resourcesPerTeam = resourcesPerTeam
-        }.ScheduleParallel();
-
+        new ResourceCountJob { resourceTransforms = resourceTransforms, resourcesPerTeam = resourcesPerTeam }.ScheduleParallel();
         new ResourceSetJob { resourcesPerTeam = resourcesPerTeam }.ScheduleParallel();
     }
 
-    [BurstCompile, WithAll(typeof(PlantTag))]
+    [BurstCompile]
+    [WithAll(typeof(PlantTag))]
     public partial struct ResourceCountJob : IJobEntity
     {
         [DeallocateOnJobCompletion, ReadOnly] public NativeArray<WorldTransform> resourceTransforms;
@@ -46,13 +41,14 @@ public partial struct TeamResourceSourcesSystem : ISystem
         {
             var resourcesNearby = 0;
             var plantPosition = plantTransform.Position;
-            var plantRadiusSq = (plantTransform.Scale * plantTransform.Scale);
+            var plantRadius = plantTransform.Scale / 2;
+            var plantRadiusSq = plantRadius * plantRadius;
 
             for (int i = 0; i < resourceTransforms.Length; i++)
             {
                 var resourcePosition = resourceTransforms[i].Position;
 
-                if(math.distancesq(plantPosition, resourcePosition) < plantRadiusSq)
+                if (math.distancesq(plantPosition, resourcePosition) < plantRadiusSq)
                 {
                     resourcesNearby++;
                 }
