@@ -4,7 +4,7 @@ using Unity.Entities;
 using Unity.Transforms;
 
 [BurstCompile]
-[UpdateBefore(typeof(GrowSystem))]
+[UpdateAfter(typeof(GrowSystem))]
 [UpdateAfter(typeof(PlantRadiusSystem))]
 partial struct FightSystem : ISystem
 {
