@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-public struct GlobalTickResources : IComponentData
+public struct TeamResources : IComponentData
 {
     public float Value;
 }
