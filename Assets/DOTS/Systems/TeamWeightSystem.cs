@@ -26,12 +26,12 @@ public partial struct TeamWeightSystem : ISystem
         new ResourceSetJob { weightsPerTeam = weightsPerTeam }.ScheduleParallel();
     }
 
-    [BurstCompile, WithAll(typeof(PlantTag))]
+    [BurstCompile]
     public partial struct WeightCountJob : IJobEntity
     {
         [NativeDisableParallelForRestriction] public NativeArray<int> weightsPerTeam;
 
-        public void Execute(Entity entity, in PlantResourceWeight weight, in Team team)
+        public void Execute(in PlantResourceWeight weight, in Team team)
         {
             unsafe
             {

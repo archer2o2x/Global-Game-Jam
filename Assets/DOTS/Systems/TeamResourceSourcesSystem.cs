@@ -19,11 +19,14 @@ public partial struct TeamResourceSourcesSystem : ISystem
         _resourcesQuery = SystemAPI.QueryBuilder().WithAll<ResourceTag, WorldTransform>().Build();
     }
 
+    //[BurstCompile]
     public void OnUpdate(ref SystemState state)
     { 
         var teamsAmount = _teamsQuery.CalculateEntityCount();
         var resourcesPerTeam = new NativeArray<int>(teamsAmount, Allocator.TempJob);
         var resourceTransforms = _resourcesQuery.ToComponentDataArray<WorldTransform>(Allocator.TempJob);
+
+        UnityEngine.Debug.Log(resourceTransforms.Length);
 
         new ResourceCountJob {
             resourceTransforms = resourceTransforms,
@@ -39,11 +42,11 @@ public partial struct TeamResourceSourcesSystem : ISystem
         [DeallocateOnJobCompletion, ReadOnly] public NativeArray<WorldTransform> resourceTransforms;
         [NativeDisableParallelForRestriction] public NativeArray<int> resourcesPerTeam;
 
-        public void Execute(Entity entity, in WorldTransform plantTransform, in Team team)
+        public void Execute(in WorldTransform plantTransform, in Team team)
         {
             var resourcesNearby = 0;
             var plantPosition = plantTransform.Position;
-            var plantRadiusSq = (plantTransform.Scale * plantTransform.Scale) / 2;
+            var plantRadiusSq = (plantTransform.Scale * plantTransform.Scale);
 
             for (int i = 0; i < resourceTransforms.Length; i++)
             {

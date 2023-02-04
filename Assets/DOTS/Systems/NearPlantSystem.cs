@@ -3,7 +3,7 @@ using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
 
-public class NearPlantSystem : ISystem
+partial struct NearPlantSystem : ISystem
 {
     private EntityQuery TeamQuery;
 
@@ -31,19 +31,21 @@ public class NearPlantSystem : ISystem
 
     partial struct NearPlantJob : IJobEntity
     {
-        [DeallocateOnJobCompletion]
+        [DeallocateOnJobCompletion, ReadOnly]
         public NativeArray<Entity> PlantEntities;
-        [DeallocateOnJobCompletion]
+        [DeallocateOnJobCompletion, ReadOnly]
         public NativeArray<Team> PlantTeam;
-        [DeallocateOnJobCompletion]
+        [DeallocateOnJobCompletion, ReadOnly]
         public NativeArray<WorldTransform> PlantTransforms;
-        [DeallocateOnJobCompletion]
+        [DeallocateOnJobCompletion, ReadOnly]
         public NativeArray<PlantBaseRadius> PlantBaseRadii;
-        [DeallocateOnJobCompletion]
+        [DeallocateOnJobCompletion, ReadOnly]
         public NativeArray<PlantRadiusMultiplier> PlantRadiiMultiplier;
 
         void Execute(ref DynamicBuffer<NearbyPlant> nearbyPlants, in Team team, PlantBaseRadius baseRadius, PlantRadiusMultiplier radiusMultiplier, WorldTransform transform)
         {
+            nearbyPlants.Clear();
+
             for (int i = 0; i < PlantEntities.Length; i ++)
             {
                 if (team.Value == PlantTeam[i].Value) continue;

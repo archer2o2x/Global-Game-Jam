@@ -30,7 +30,7 @@ public partial struct PlantRadiusSystem : ISystem
             in PlantBaseRadius radius, 
             in PlantRadiusMultiplier radiusMultiplier)
         {
-            transform.Scale = radius.Value * radiusMultiplier.Value;
+            transform.Scale = 2 * radius.Value * radiusMultiplier.Value;
         }
     }
 }

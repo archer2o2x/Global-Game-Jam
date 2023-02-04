@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
 
@@ -18,8 +20,6 @@ public class PlantAuthoring : MonoBehaviour
     {
         public override void Bake(PlantAuthoring authoring)
         {
-            AddComponent<PlantTag>();
-
             AddComponent(new PlantRadiusMultiplier { Value = authoring.PlantRadiusMultiplier });
             AddComponent(new PlantResourceWeight { Value = authoring.PlantResourceWeight });
             AddComponent(new Team { Value = authoring.Team });
