@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 2970788282223387534, guid: 05db72e127238ba4bad3a89c854583cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2970788282223387534, guid: 05db72e127238ba4bad3a89c854583cf,
         type: 3}
@@ -195,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514592295165894688, guid: 05db72e127238ba4bad3a89c854583cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -430,7 +435,7 @@ PrefabInstance:
     - target: {fileID: 4885117963648763857, guid: 66a7594e042d35543913364f72bb7a8c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.08
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 4885117963648763857, guid: 66a7594e042d35543913364f72bb7a8c,
         type: 3}
@@ -503,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 8780951524340622253, guid: 55af1214f57ecda40b55a81f346e1af2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 8780951524340622253, guid: 55af1214f57ecda40b55a81f346e1af2,
         type: 3}
