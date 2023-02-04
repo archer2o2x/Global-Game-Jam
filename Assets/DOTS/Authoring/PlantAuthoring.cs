@@ -14,6 +14,8 @@ public class PlantAuthoring : MonoBehaviour
 
     public int Team;
 
+    public GameObject Enemy;
+
     public class PlantBaker : Baker<PlantAuthoring>
     {
         public override void Bake(PlantAuthoring authoring)
@@ -27,6 +29,7 @@ public class PlantAuthoring : MonoBehaviour
             AddSharedComponent(new ResourceStealPerRadius { Value = authoring.ResourceStealPerRadius });
 
             AddBuffer<NearbyPlant>();
+            //AddBuffer<NearbyPlant>().Add(new NearbyPlant { Value = GetEntity(authoring.Enemy) });
         }
     }
 }

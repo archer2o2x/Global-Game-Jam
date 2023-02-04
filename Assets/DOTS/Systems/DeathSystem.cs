@@ -1,6 +1,7 @@
 using Unity.Burst;
 using Unity.Entities;
 
+[UpdateAfter(typeof(FightSystem))]
 [BurstCompile]
 partial struct DeathSystem : ISystem
 {

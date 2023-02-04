@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6a31e04451c454e9424c9fed131822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlantRadiusMultiplier: 3.06
+  PlantRadiusMultiplier: 4
   PlantResourceWeight: 0
-  PlantBaseRadius: 1.07
+  PlantBaseRadius: 1
   GrowPerConsuption: 0
-  ResourceStealPerRadius: 2.06
+  ResourceStealPerRadius: 1
   Team: 0
 --- !u!23 &263975832006367862
 MeshRenderer:
