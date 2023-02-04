@@ -188,13 +188,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5874201655792747640, guid: 05db72e127238ba4bad3a89c854583cf,
         type: 3}
-      propertyPath: PlantBaseRadius
-      value: 1.07
+      propertyPath: PlantRadiusMultiplier
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 5874201655792747640, guid: 05db72e127238ba4bad3a89c854583cf,
         type: 3}
-      propertyPath: PlantRadiusMultiplier
-      value: 2.84
+      propertyPath: ResourceStealPerRadius
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 8514592295165894688, guid: 05db72e127238ba4bad3a89c854583cf,
         type: 3}

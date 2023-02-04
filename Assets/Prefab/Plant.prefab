@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5874201655792747640
 MonoBehaviour:
@@ -46,8 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6a31e04451c454e9424c9fed131822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlantRadiusMultiplier: 3.06
   PlantResourceWeight: 0
-  PlantType: 0
+  PlantBaseRadius: 1.07
+  GrowPerConsuption: 0
+  ResourceStealPerRadius: 2.06
   Team: 0
 --- !u!23 &263975832006367862
 MeshRenderer:
