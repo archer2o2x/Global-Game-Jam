@@ -19,7 +19,7 @@ public partial struct GrowSystem : ISystem
         weightsByTeam = new NativeHashMap<int, int>(100, Allocator.Persistent);
     }
 
-    [BurstCompile]
+    //[BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
         var teams = _teamsQuery.ToComponentDataArray<Team>(Allocator.Temp);
