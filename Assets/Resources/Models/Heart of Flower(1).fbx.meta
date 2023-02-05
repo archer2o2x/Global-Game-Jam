@@ -3,7 +3,57 @@ guid: ec3fda02c2c1c6b4b87ea217b25f59b6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heart1
+    second: {fileID: 2100000, guid: 724d648462a2c5d4cbe76bdddc9c1246, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Inside1
+    second: {fileID: 2100000, guid: 8f09bf8084fe3794990d2df4c368fa28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Middle1
+    second: {fileID: 2100000, guid: 587019b9b34cf014192ec72c9b578733, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outiside1
+    second: {fileID: 2100000, guid: 4846a06192487924baac90de7423697a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: bcf0fb0d6ad29534688bbb683113b271, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert12
+    second: {fileID: 2100000, guid: 9bac34fb3987ab84eb69df29dc5946e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert13
+    second: {fileID: 2100000, guid: 60e59e70eb422fa4384f1ddb553ba345, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert14
+    second: {fileID: 2100000, guid: ddeb4fbf436f95049a25f88325edc630, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert15
+    second: {fileID: 2100000, guid: 3c527e03e8cb67b4a86326f8b6aed481, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__lambert12
+    second: {fileID: 2100000, guid: 7f6e46906c6826e4e8d5069c0811a7da, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -89,7 +139,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.049999997
+    globalScale: 5
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
