@@ -2,6 +2,7 @@
 {
     Properties
     {
+        [HDR]_MainColor("Color",Color) = (0.5,0.5,0.5,0.5)
         _MainTex ("Texture", 2D) = "white" {}
         _Noise("Noise",2D)="black"
 
@@ -38,6 +39,7 @@
                 float4 pos : SV_POSITION;
             };
 
+            half4 _MainColor;
             sampler2D _MainTex;
             sampler2D _Noise;
             float4 _MainTex_ST;
@@ -62,7 +64,7 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_MainTex, i.uv) * _MainColor;
                 return col;
             }
             ENDCG
