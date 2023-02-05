@@ -10,6 +10,8 @@ public class GameRules : MonoBehaviour
     public UnityEvent GameWon;
     public UnityEvent GameLost;
 
+    public bool ShouldLose = false;
+
     private void Awake()
     {
         var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
@@ -32,15 +34,15 @@ public class GameRules : MonoBehaviour
 
                 if (team == 0)
                 {
-                    print("lost");
                     GameLost.Invoke();
+                    enabled = ShouldLose ? false : true;
                     return;
                 }
 
                 if (team == 1)
                 {
-                    print("won");
                     GameWon.Invoke();
+                    enabled = false;
                     return;
                 }
             }

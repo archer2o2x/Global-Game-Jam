@@ -19,7 +19,7 @@ public partial struct TeamResourcesSystem : ISystem
         _resourcesQuery = SystemAPI.QueryBuilder().WithAll<ResourceTag, WorldTransform>().Build();
     }
 
-    [BurstCompile]
+    //[BurstCompile]
     public void OnUpdate(ref SystemState state)
     { 
         var teamsAmount = _teamsQuery.CalculateEntityCount();

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Entities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ public class SceneSwitcher : MonoBehaviour
 
     public void GotoScene(string NewScene)
     {
+        //World.DisposeAllWorlds();
         SceneManager.LoadScene(NewScene);
     }
 
