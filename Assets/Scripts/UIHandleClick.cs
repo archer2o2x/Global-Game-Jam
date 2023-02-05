@@ -46,6 +46,8 @@ public class UIHandleClick : MonoBehaviour
 
     public void PreprocessClick()
     {
+        //if (!(PlantPosition.z == -100)) { return; }
+
         Ray ClickPosRay = Camera.main.ScreenPointToRay(Input.mousePosition + Vector3.forward * 10);
 
         RaycastHit info;
