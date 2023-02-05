@@ -45,7 +45,7 @@ public partial struct TeamResourcesSystem : ISystem
     }
 
     [BurstCompile]
-    [WithAll(typeof(PlantTag))]
+    [WithAll(typeof(PlantType))]
     public partial struct ResourceCountJob : IJobEntity
     {
         [DeallocateOnJobCompletion, ReadOnly] public NativeArray<WorldTransform> resourceTransforms;

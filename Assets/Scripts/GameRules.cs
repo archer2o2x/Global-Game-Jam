@@ -13,7 +13,6 @@ public class GameRules : MonoBehaviour
     private void Awake()
     {
         var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-
         _teamsQuery = entityManager.CreateEntityQuery(ComponentType.ReadOnly<TeamPlantsCount>(), ComponentType.ReadOnly<Team>());
     }
 
@@ -46,10 +45,5 @@ public class GameRules : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void OnDestroy()
-    {
-        _teamsQuery.Dispose();
     }
 }

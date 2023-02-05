@@ -25,7 +25,7 @@ public class UIHandleClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Plants = World.DefaultGameObjectInjectionWorld.EntityManager.CreateEntityQuery(typeof(WorldTransform), typeof(Team), typeof(PlantTag));
+        Plants = World.DefaultGameObjectInjectionWorld.EntityManager.CreateEntityQuery(typeof(WorldTransform), typeof(Team), typeof(PlantType));
 
         PlantWeightingSlider.onValueChanged.AddListener(HandleSliderChange);
 
@@ -105,12 +105,5 @@ public class UIHandleClick : MonoBehaviour
         result.z = 0;
 
         return result;
-    }
-
-    private void OnDestroy()
-    {
-        // Doesn't need destroying in most cases
-        if (Plants == null) return;
-        Plants.Dispose();
     }
 }
