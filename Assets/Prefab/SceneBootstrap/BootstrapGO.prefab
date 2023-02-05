@@ -722,6 +722,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9f3a1ba51649146a733cb4a71ea16d, type: 3}
+--- !u!1 &2778397038615486974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 975399177312391230, guid: 3b9f3a1ba51649146a733cb4a71ea16d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3100597504082031040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3893847078708881713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2093663967777331441, guid: 3b9f3a1ba51649146a733cb4a71ea16d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3100597504082031040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7373103566745756354 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5572377301230703362, guid: 3b9f3a1ba51649146a733cb4a71ea16d,
@@ -953,6 +965,86 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameRules
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3893847078708881713}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2778397038615486974}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameWon.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866342244952920203, guid: 0a48eb23d37507a469d73beee39b8651,
+        type: 3}
+      propertyPath: GameLost.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
