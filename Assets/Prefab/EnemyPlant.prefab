@@ -85,6 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8108071617420336922, guid: fb0bb0dd5b1a81b46a0c79aab2d63d16,
         type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108071617420336922, guid: fb0bb0dd5b1a81b46a0c79aab2d63d16,
+        type: 3}
       propertyPath: PlantBaseRadius
       value: 0.6
       objectReference: {fileID: 0}
