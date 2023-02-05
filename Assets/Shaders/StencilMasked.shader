@@ -108,7 +108,7 @@ Shader "Unlit/StenciMasked"
             }
 
         // Render State
-        Cull Back
+        Cull Off
         Blend One Zero
         ZTest LEqual
         ZWrite On
