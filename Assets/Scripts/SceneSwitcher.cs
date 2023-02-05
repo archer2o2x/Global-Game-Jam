@@ -10,6 +10,11 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(NewScene.ToString());
     }
 
+    public void GotoScene(string NewScene)
+    {
+        SceneManager.LoadScene(NewScene);
+    }
+
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

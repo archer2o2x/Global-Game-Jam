@@ -131,6 +131,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1997021639133333119, guid: 08f69db334e59de42ba2a3eaeb2c8841,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100597504577707895, guid: 08f69db334e59de42ba2a3eaeb2c8841,
+        type: 3}
+      propertyPath: m_text
+      value: 'Level 3
+
+        <color=#999999><size=50%>A lesson in garden management.</color></size>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100597504577707895, guid: 08f69db334e59de42ba2a3eaeb2c8841,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 52.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3463116526890822144, guid: 08f69db334e59de42ba2a3eaeb2c8841,
         type: 3}
       propertyPath: m_Name
