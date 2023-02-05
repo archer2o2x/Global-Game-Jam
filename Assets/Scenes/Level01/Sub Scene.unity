@@ -1095,6 +1095,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPlant
       objectReference: {fileID: 0}
+    - target: {fileID: 4284167464863047719, guid: 66a7594e042d35543913364f72bb7a8c,
+        type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4885117963648763857, guid: 66a7594e042d35543913364f72bb7a8c,
         type: 3}
       propertyPath: m_RootOrder
@@ -1167,6 +1172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284167464863047719, guid: 66a7594e042d35543913364f72bb7a8c,
+        type: 3}
+      propertyPath: Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4885117963648763857, guid: 66a7594e042d35543913364f72bb7a8c,
         type: 3}
