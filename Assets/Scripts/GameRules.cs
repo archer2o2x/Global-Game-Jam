@@ -28,7 +28,7 @@ public class GameRules : MonoBehaviour
 
             if(teamPlantsCount == 0)
             {
-                enabled = false;
+                //enabled = false;
 
                 if (team == 0)
                 {

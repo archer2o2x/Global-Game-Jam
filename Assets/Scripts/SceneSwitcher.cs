@@ -20,6 +20,11 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit(0);
+    }
+
     public enum Scenes
     {
         MainMenu,
