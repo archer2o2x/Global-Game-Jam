@@ -13,10 +13,12 @@ public partial struct GraphicsSpawnerSystem : ISystem
     {
         var ecbSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
         var ecb = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged);
-        foreach (var (transform, type, entity) in SystemAPI.Query<WorldTransform, PlantType>().WithNone<AnimatorReference>().WithEntityAccess())
+        foreach (var (transform, type, entity) in SystemAPI.Query<LocalTransform, PlantType>().WithNone<AnimatorReference>().WithEntityAccess())
         {
             var prefab = GraphicsPrefabs.Instance.GetPrefab(type.value);
-            var graphic = Object.Instantiate(prefab, transform.Position, Quaternion.identity);
+            var rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            var graphic = Object.Instantiate(prefab, transform.Position, rotation);
+            graphic.transform.localScale *= Random.Range(1, 1.3f);
             ecb.AddComponent(entity, new AnimatorReference { value = graphic.GetComponent<Animator>() });
         }
     }
