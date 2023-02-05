@@ -19,6 +19,5 @@ public class CameraMovement : MonoBehaviour
 
         Camera.position += new Vector3(hori, 0, vert) * CameraMoveSpeed * Time.deltaTime;
         Camera.position += new Vector3(0, scroll, 0) * CameraScrollSpeed * Time.deltaTime;
-
     }
 }

@@ -12,11 +12,11 @@ public partial struct PlayerSpawnerSystem : ISystem
     {
         var pressedKey = -1;
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             pressedKey = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             pressedKey = 1;
         }
@@ -25,11 +25,17 @@ public partial struct PlayerSpawnerSystem : ISystem
             return;
         }
 
+        var prefabAmountBuffer = SystemAPI.GetSingletonBuffer<PlayerPlantPrefabAmount>();
+
+        if(pressedKey >= prefabAmountBuffer.Length)
+        {
+            return;
+        }
+
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            var prefabAmountBuffer = SystemAPI.GetSingletonBuffer<PlayerPlantPrefabAmount>();
             var prefabAmount = prefabAmountBuffer[pressedKey].Value;
 
             if(prefabAmount > 0)
