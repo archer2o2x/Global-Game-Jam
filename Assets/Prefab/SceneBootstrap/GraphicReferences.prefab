@@ -47,5 +47,7 @@ MonoBehaviour:
   _prefabs:
   - {fileID: 8770650540287268164, guid: fe5a4ffc15bfa5541b2dc6561c64485a, type: 3}
   - {fileID: 1372642970308920507, guid: 7c4f9dc78bd946a40b6db29bbc555974, type: 3}
+  _spawnEffect: {fileID: 4060841311853959172, guid: 06439d183769b1c4e888742878306ea4,
+    type: 3}
   _spawnSound: {fileID: 8300000, guid: ebf363e0f4d214e4780ae4e3bcd471e9, type: 3}
   _despawnSound: {fileID: 8300000, guid: a317135e63c6b9f4aa4f02e9b1d2ee73, type: 3}

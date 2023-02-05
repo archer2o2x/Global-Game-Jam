@@ -8,6 +8,7 @@ public class ArtReferences : MonoBehaviour
     private AudioSource _despawnSource;
 
     [SerializeField] private GameObject[] _prefabs;
+    [SerializeField] private GameObject _spawnEffect;
     [SerializeField] private AudioClip _spawnSound;
     [SerializeField] private AudioClip _despawnSound;
 
@@ -26,13 +27,16 @@ public class ArtReferences : MonoBehaviour
         return _prefabs[plantType];
     }
 
-    public void PlaySpawn()
+    public void PlaySpawn(Vector3 pos)
     {
         _spawnSource.Play();
+        Instantiate(_spawnEffect, pos, Quaternion.identity);
+
     }
 
-    public void PlayDespawn()
+    public void PlayDespawn(Vector3 pos)
     {
         _despawnSource.Play();
+        Instantiate(_spawnEffect, pos, Quaternion.identity);
     }
 }
