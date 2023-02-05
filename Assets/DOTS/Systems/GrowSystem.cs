@@ -55,7 +55,7 @@ public partial struct GrowSystem : ISystem
             var teamResources = resourcesByTeam[team.Value];
             var teamWeight = weightsByTeam[team.Value];
             var plantResources = teamResources * ((float)weight.Value / teamWeight);
-            radiusMultiplier.AddValue(plantResources * growPerConsumption.Value);
+            radiusMultiplier.Value += plantResources * growPerConsumption.Value;
         }
     }
 
