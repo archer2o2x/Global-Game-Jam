@@ -88,6 +88,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c89ff75a212edf246b34fc2194a31ad1, type: 2}
+    - target: {fileID: 8108071617420336922, guid: fb0bb0dd5b1a81b46a0c79aab2d63d16,
+        type: 3}
+      propertyPath: ResourceStealPerRadius
+      value: 0.005
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7819405256139373922, guid: fb0bb0dd5b1a81b46a0c79aab2d63d16, type: 3}
     m_RemovedGameObjects: []

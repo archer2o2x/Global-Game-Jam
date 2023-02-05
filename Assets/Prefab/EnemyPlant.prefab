@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: Team
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8108071617420336922, guid: fb0bb0dd5b1a81b46a0c79aab2d63d16,
+        type: 3}
+      propertyPath: ResourceStealPerRadius
+      value: 0.005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -14,6 +14,7 @@ partial struct FightSystem : ISystem
     public void OnCreate(ref SystemState state)
     {
         LocalLookup = state.GetComponentLookup<LocalTransform>();
+        state.Enabled = false;
     }
 
     [BurstCompile]
