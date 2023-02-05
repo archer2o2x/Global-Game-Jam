@@ -45,6 +45,7 @@ public partial struct PlayerSpawnerSystem : ISystem
                 var plant = state.EntityManager.Instantiate(prefab);
                 state.EntityManager.SetComponentData(plant, LocalTransform.FromPosition(hit.point));
                 prefabAmountBuffer[pressedKey] = new PlayerPlantPrefabAmount { Value = prefabAmount - 1 };
+                ArtReferences.Instance.PlaySpawn(hit.point);
             }
         }
     }

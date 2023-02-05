@@ -15,7 +15,7 @@ public partial struct GraphicsSpawnerSystem : ISystem
         var ecb = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged);
         foreach (var (transform, type, entity) in SystemAPI.Query<LocalTransform, PlantType>().WithNone<AnimatorReference>().WithEntityAccess())
         {
-            var prefab = GraphicsPrefabs.Instance.GetPrefab(type.value);
+            var prefab = ArtReferences.Instance.GetPlantGraphicPrefab(type.value);
             var rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
             var graphic = Object.Instantiate(prefab, transform.Position, rotation);
             graphic.transform.localScale *= Random.Range(1, 1.3f);
