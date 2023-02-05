@@ -110,11 +110,4 @@ public class UIHandleClick : MonoBehaviour
 
         return result;
     }
-
-    private void OnDestroy()
-    {
-        // Doesn't need destroying in most cases
-        if (!Plants.IsEmpty) return;
-        Plants.Dispose();
-    }
 }
