@@ -17,6 +17,7 @@ public partial struct GraphicsDespawnerSystem : ISystem
         foreach (var (animator, entity) in SystemAPI.Query<AnimatorReference>().WithNone<LocalTransform>().WithEntityAccess())
         {
             Object.Destroy(animator.value.gameObject);
+            ArtReferences.Instance.PlayDespawn();
             ecb.RemoveComponent<AnimatorReference>(entity);
         }
     }
