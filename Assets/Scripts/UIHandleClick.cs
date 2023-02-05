@@ -93,6 +93,8 @@ public class UIHandleClick : MonoBehaviour
     {
         int NewPlantWeight = (int)PlantWeightingSlider.value;
 
+        if (!World.DefaultGameObjectInjectionWorld.EntityManager.Exists(PlantEntity)) return;
+
         World.DefaultGameObjectInjectionWorld.EntityManager.SetComponentData<PlantResourceWeight>(PlantEntity, new PlantResourceWeight { Value = NewPlantWeight });
     }
 
@@ -105,5 +107,12 @@ public class UIHandleClick : MonoBehaviour
         result.z = 0;
 
         return result;
+    }
+
+    private void OnDestroy()
+    {
+        // Doesn't need destroying in most cases
+        if (!Plants.IsEmpty) return;
+        Plants.Dispose();
     }
 }
